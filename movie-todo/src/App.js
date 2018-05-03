@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Login updateUsername={this.updateUsername}/>
+        {this.state.isLogged ? <MovieContainer username={this.state.username}/> : <Login updateUsername={this.updateUsername}/>}
 
       </div>
     );
