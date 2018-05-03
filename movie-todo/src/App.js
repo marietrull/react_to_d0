@@ -9,12 +9,23 @@ class App extends Component {
     super();
 
     this.state = {
-      isLogged: false
+      isLogged: false,
+      username: ''
     }
   }
+  updateUsername = (username) => {
+    this.setState({
+      username: username,
+      isLogged: true
+    })
+    
+  }
   render() {
+    console.log(this.state, ' we are checking the state')
     return (
       <div className="App">
+
+        <Login updateUsername={this.updateUsername}/>
 
       </div>
     );
