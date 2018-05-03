@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Movie from '../Movies';
+import CreateMovie from '../CreateMovie';
 
 class MovieContainer extends Component {
 	constructor (){
@@ -14,11 +15,10 @@ class MovieContainer extends Component {
 			<div>
 				<span> Hi {this.props.username}</span>
 				<Movie movies={this.state.movies}/>
+				<CreateMovie />
 			</div>
 			)
 	}
 }
 
 export default MovieContainer;
-
-//make a movie component that will render our list of movies
