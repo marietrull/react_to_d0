@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Movie from '../Movies';
 
 class MovieContainer extends Component {
 	constructor (){
@@ -10,9 +11,14 @@ class MovieContainer extends Component {
 	}
 	render () {
 		return (
-			<span> Hi {this.props.username}</span>
+			<div>
+				<span> Hi {this.props.username}</span>
+				<Movie movies={this.state.movies}/>
+			</div>
 			)
 	}
 }
 
 export default MovieContainer;
+
+//make a movie component that will render our list of movies

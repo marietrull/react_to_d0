@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Login from './Login';
 import MovieContainer from './MovieContainer';
+import Movie from './Movies';
 
 class App extends Component {
   constructor () {
