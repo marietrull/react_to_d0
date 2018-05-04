@@ -10,6 +10,7 @@ class MovieContainer extends Component {
 			movies: ['Young Frankenstein', 'Blazing Saddles', 'History of the World Part One', 'The Producers']
 		}
 	}
+	// normally e is the first parameter passed.     
 	addMovie = (movie, e) => {
 		//Stop page from refreshing every time the form is submitted
 		e.preventDefault();
@@ -18,11 +19,20 @@ class MovieContainer extends Component {
 		console.log(e.target, ' this is e.target')
 		this.setState({movies: [...this.state.movies, movie]})	
 	}
+	removeMovie = (e) => {
+		console.log('Delete Clicked')
+		console.log(e.currentTarget.id)
+
+		const id = e.currentTarget.id
+
+		this.setState({movies: this.state.movies.filter((movie, i) => i != id)})
+		
+	}
 	render () {
 		return (
 			<div>
 				<span> Hi {this.props.username}</span>
-				<Movie movies={this.state.movies}/>
+				<Movie movies={this.state.movies} removeMovie={this.removeMovie}/>
 				<CreateMovie addMovie={this.addMovie}/>
 			</div>
 			)
